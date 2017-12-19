@@ -16,14 +16,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Eslabon"
-        android:label="@string/title_activity_eslabon"
-        android:parentActivityName=".MainActivity">
-        <meta-data
-        android:name="android.support.PARENT_ACTIVITY"
-        android:value="com.herprogramacion.notimax.MainActivity" />
+        <activity
+            android:name=".Eslabon"
+            android:label="@string/title_activity_eslabon"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.herprogramacion.notimax.MainActivity" />
         </activity>
+        <activity
+        android:name=".DetalleNotificacion"
+        android:label="@string/title_activity_detalle_notificacion"
+        android:launchMode="singleTask"
+        android:taskAffinity=""
+        android:excludeFromRecents="true"/>
     </application>
 
 </manifest>

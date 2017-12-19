@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EjercicioNotificaciones.iml" filepath="$PROJECT_DIR$/EjercicioNotificaciones.iml" />
+      <module fileurl="file://C:\Users\IN2DM3_03\AndroidStudioProjects\EjercicioNotificaciones\EjercicioNotificaciones.iml" filepath="C:\Users\IN2DM3_03\AndroidStudioProjects\EjercicioNotificaciones\EjercicioNotificaciones.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\IN2DM3_03\AndroidStudioProjects\EjercicioNotificaciones\app\app.iml" filepath="C:\Users\IN2DM3_03\AndroidStudioProjects\EjercicioNotificaciones\app\app.iml" />
     </modules>
   </component>
 </project>

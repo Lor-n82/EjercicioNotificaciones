@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">EjercicioNotificaciones</string>
     <string name="title_activity_eslabon">Eslabon</string>
+    <string name="title_activity_detalle_notificacion">Eslabon</string>
 </resources>

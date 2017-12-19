@@ -1,5 +1,6 @@
 package com.example.loren.ejercicionotificaciones;
 
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
@@ -123,4 +124,38 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         // Construir la notificación y emitirla
                                 notifyMgr.notify(id, builder.build());
                             }
+
+    public void notification3() {
+        String GRUPO_NOTIFICACIONES = "notificaciones_similares";
+        Notification notificacion;
+        // Comprobar si ya fue presionado el item
+        if(!segundaVez) {
+            notificacion = new NotificationCompat.Builder(this)
+                    .setContentTitle("Mensaje Nuevo")
+                    .setSmallIcon(R.drawable.ic_stat_msg)
+                    .setContentText("Carlos Arándano ¿Donde estás?")
+                    .setColor(getResources().getColor(R.color.colorPrimaryDark))
+                    .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+                    .build();
+        // Activar la bandera
+            segundaVez = true;
+        }else {
+            notificacion = new NotificationCompat.Builder(this)
+                    .setContentTitle("2 mensajes nuevos")
+                    .setSmallIcon(R.drawable.ic_stat_msg)
+                    .setNumber(2)
+                    .setColor(getResources().getColor(R.color.colorPrimaryDark))
+                    .setStyle(
+                            new NotificationCompat.InboxStyle()
+                                    .addLine("Carlos Arándano ¿Si lo viste?")
+                                    .addLine("Ximena Claus Nuevo diseño del logo")
+                                    .setBigContentTitle("2 mensajes nuevos"))
+                                    .setGroup(GRUPO_NOTIFICACIONES)
+                    .setGroupSummary(true)
+                    .build();
+        }
+        notifyMgr.notify(3, notificacion);
+
+
+
 }
