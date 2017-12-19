@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private ListView list;
 
     private NotificationManager notifyMgr;
+    private boolean segundaVez = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +70,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         "Ximena Claus",
                         ":D ¡Ya tengo el nuevo logo!"
                 );
+            case 2:
+                notification3();
                 break;
         }
     }
@@ -126,35 +129,43 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                             }
 
     public void notification3() {
+
         String GRUPO_NOTIFICACIONES = "notificaciones_similares";
         Notification notificacion;
+
         // Comprobar si ya fue presionado el item
         if(!segundaVez) {
             notificacion = new NotificationCompat.Builder(this)
                     .setContentTitle("Mensaje Nuevo")
-                    .setSmallIcon(R.drawable.ic_stat_msg)
-                    .setContentText("Carlos Arándano ¿Donde estás?")
+                    .setSmallIcon(R.drawable.icononotificacion)
+                    .setContentText("Carlos Arándano   ¿Donde estás?")
                     .setColor(getResources().getColor(R.color.colorPrimaryDark))
                     .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                     .build();
-        // Activar la bandera
+
+            // Activar la bandera
             segundaVez = true;
+
         }else {
+
             notificacion = new NotificationCompat.Builder(this)
                     .setContentTitle("2 mensajes nuevos")
-                    .setSmallIcon(R.drawable.ic_stat_msg)
+                    .setSmallIcon(R.drawable.icononotificacion)
                     .setNumber(2)
                     .setColor(getResources().getColor(R.color.colorPrimaryDark))
                     .setStyle(
                             new NotificationCompat.InboxStyle()
-                                    .addLine("Carlos Arándano ¿Si lo viste?")
-                                    .addLine("Ximena Claus Nuevo diseño del logo")
-                                    .setBigContentTitle("2 mensajes nuevos"))
-                                    .setGroup(GRUPO_NOTIFICACIONES)
+                                    .addLine("Carlos Arándano   ¿Si lo viste?")
+                                    .addLine("Ximena Claus   Nuevo diseño del logo")
+                                    .setBigContentTitle("2 mensajes nuevos")
+                    )
+                    .setGroup(GRUPO_NOTIFICACIONES)
                     .setGroupSummary(true)
                     .build();
         }
+
         notifyMgr.notify(3, notificacion);
+    }
 
 
 
